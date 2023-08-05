@@ -1,0 +1,29 @@
+Time & Space Complexity: Explenation
+-------------------------------------------------------------------------
+Time Complexty Solution: O(n^2)
+To analyze the time complexity of the given code, let's break it down:
+
+1. The `every()` method in the first line has a time complexity of O(n) since it iterates through the `nums` array to check if all elements are equal to `val`.
+
+2. The for loop iterates through the `nums` array once, which also takes O(n) time complexity.
+
+3. Inside the loop, the `splice()` method is used to remove an element from the array at index `i`. However, the `splice()` method has a time complexity of O(n) since it may need to shift all the subsequent elements after the removal.
+
+As a result, the overall time complexity of the code is dominated by the loop and the `splice()` method inside it. Therefore, the total time complexity is O(n^2).
+
+Note: The use of `splice()` inside a loop can lead to inefficient performance, especially for large arrays. A more efficient approach to remove elements from an array is to use a separate array or use array filter methods that do not modify the original array in place. For example, you can use the `filter()` method to create a new array without the target element.
+
+in this case the space complxity will not be in-place.
+-------------------------------------------------------------------------
+Space Complexity Solution: O(1)
+
+Let's analyze the memory usage:
+The nums array is the main input parameter, and its size does not change throughout the execution of the function. It is not creating any additional space but working with the input array in-place.
+
+The only other variables used in the function are val, i, and the return value, but these are all single variables and do not depend on the size of the input array. They use constant space regardless of the size of the input.
+
+The every() method used in the first line of the code does not create any additional data structures. It just iterates through the array and returns a Boolean result.
+
+The splice() method used inside the loop does modify the nums array in-place, but it doesn't create any new arrays or data structures. It just removes elements from the existing array.
+
+Since the memory usage is constant and does not grow with the size of the input, the space complexity of the code is O(1).
